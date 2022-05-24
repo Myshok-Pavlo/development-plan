@@ -1,0 +1,17 @@
+apiVersion: v2
+name       : App-HelmChart
+description: My Helm chart for Minikube
+type       : application
+version    : 0.1.0 # this is the Helm Chart version
+appVersion : "1.0.0" # this is the version of the application 
+
+
+keywords:
+  - devops
+  - python http sever
+  - myshokpavlo
+
+maintainers:
+  - name : Myshok Pavlo
+    email: myshokpavlo@softwarenetic.com
+    url  : https://www.linkedin.com/in/pavlo-myshok-79284b237/

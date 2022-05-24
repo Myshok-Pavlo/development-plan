@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-server
+spec:
+  selector:
+    matchLabels:
+      app: simple-server
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: simple-server
+    spec:
+      containers:
+      - name: simple-server
+        image: myshokpavlo/simple_server:simple_server
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            memory: "2Gi"
+            cpu: "100m"
+

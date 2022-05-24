@@ -1,0 +1,3 @@
+# Defaul Values for Helm Chart
+
+replicaCount : 2

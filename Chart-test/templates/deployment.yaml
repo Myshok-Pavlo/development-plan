@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-server
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-server
+  replicas: {{.Values.replicaCount}}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-server
+    spec:
+      containers:
+      - name: {{ .Release.Name }}-server
+        image: myshokpavlo/simple_server:simple_server
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            memory: "2Gi"
+            cpu: "100m"
+
