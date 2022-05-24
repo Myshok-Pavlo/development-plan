@@ -1,0 +1,48 @@
+
+
+name: CI-CD-plan-app
+
+
+on:
+
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+  workflow_dispatch:
+
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+      - uses: actions/checkout@v1
+      
+      - name: docker login
+        env:
+          DOCKER_USER: ${{ secrets.DOCKERUSR }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKERPW }}
+        run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        
+        
+        
+      - name: Build Image
+        run: |
+          echo "hello world!"
+          docker build ./App-code -t myshokpavlo/simpleserver:1.0.0
+          
+          
+          
+          
+      - name: Push Image
+        run: |
+          docker push myshokpavlo/simpleserver:1.0.0
+          
