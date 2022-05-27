@@ -7,7 +7,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         if self.path.endswith('/healthchek'):
             self.send_response(200)
             self.end_headers()
-            self.wfile.write(b'Healthcheck OK')
+            self.wfile.write(b'Ok')
         elif self.path.endswith('/'):
             self.send_response(200)
             self.end_headers()
