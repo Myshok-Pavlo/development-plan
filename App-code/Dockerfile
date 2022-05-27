@@ -1,18 +1,13 @@
 FROM python:3
 
-#ENV SCR_DIR /usr/bin/src/webapp/src
-
-#COPY SRC/* /home/softwarenetic/SCR_DIR
-
-RUN mkdir /code
-COPY . /code
 WORKDIR /code
-#WORKDIR /home/softwarenetic/src
+COPY . .
 
-ENV PYTHONUNBUFFERED=1
 EXPOSE 5000
 
-CMD [ "python", "simple_server.py" ]
+RUN pip install -r requirements.txt
+
+CMD [ "uvicorn", "app:app", "--port", "5000"]
 
 
 
