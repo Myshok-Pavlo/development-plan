@@ -11,7 +11,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         elif self.path.endswith('/'):
             self.send_response(200)
             self.end_headers()
-            self.wfile.write(b'Hello, world!')
+            self.wfile.write(b'Hello, test!')
         else:
             self.send_response(200)
             self.end_headers()
