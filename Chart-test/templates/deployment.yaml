@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: {{ .Release.Name }}-server
-        image: myshokpavlo/simple_server:simple_server
+        image: {{ .Values.container.image }}
         ports:
         - containerPort: 5000
         resources:
