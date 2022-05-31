@@ -1,3 +1,4 @@
 # Defaul Values for Helm Chart
-
+container:
+  image: myshokpavlo/simple_server:simple_server
 replicaCount : 2
