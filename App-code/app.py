@@ -1,6 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
-
+counter = 0
 app = FastAPI()
 
 
