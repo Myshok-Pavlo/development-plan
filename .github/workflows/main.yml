@@ -37,12 +37,12 @@ jobs:
       - name: Build Image
         run: |
           echo "hello world!"
-          docker build ./App-code -t myshokpavlo/simpleserver:1.0.0
+          docker build ./App-code -t myshokpavlo/simpleserver:1.0.5
           
           
           
           
       - name: Push Image
         run: |
-          docker push myshokpavlo/simpleserver:1.0.0
+          docker push myshokpavlo/simpleserver:1.0.5
           
