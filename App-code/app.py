@@ -1,12 +1,20 @@
+
+  
+from requests import request
 import uvicorn
 from fastapi import FastAPI
-counter = 0
 app = FastAPI()
-
+counter =1
 
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
+
+@app.get("/metrics")
+def read_root():
+    global counter
+    counter = counter + 1
+    return {"replies_counter " : counter}
 
 @app.get("/healthchek")
 def read_root():
