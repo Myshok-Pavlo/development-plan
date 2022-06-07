@@ -1,6 +1,5 @@
 
   
-from requests import request
 import uvicorn
 from fastapi import FastAPI
 app = FastAPI()
