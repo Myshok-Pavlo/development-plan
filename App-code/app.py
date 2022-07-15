@@ -11,7 +11,7 @@ output = '''# HELP http_requests_total The total number of HTTP requests.
 '''
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Hello": "World!"}
 
 @app.get("/metrics", response_class=PlainTextResponse)
 def read_root():
